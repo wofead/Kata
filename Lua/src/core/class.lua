@@ -38,20 +38,18 @@ function class(className, super)
             for i, v in pairs(super) do
                 cls[i] = v
             end
-
-            cls.__create = super.__create
             cls.super = super
         else
             cls.__create = super
             cls.ctor = function()
             end
         end
-
+        local __create = cls.__create
         cls.__cname = className
         cls.__ctype = 1
         function cls.new(...)
             ---@type  cls
-            local instance = cls.__create(...)
+            local instance = __create(...)
             for k, v in pairs(cls) do
                 instance[k] = v
             end

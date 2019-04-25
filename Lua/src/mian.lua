@@ -10,4 +10,4 @@ print("This is my first kata, just do it.")
 --local  test = class("test",{2,3,4})
 --test:new()
 --.\core\class.lua:78: attempt to call method 'ctor' (a nil value)
-
+require("core.tableUnit")
